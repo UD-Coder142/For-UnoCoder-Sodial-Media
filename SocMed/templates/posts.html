@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br/>
+<div class="center-div" style="height:90%;">
+	<div style="height:100%;overflow-x:hidden;overflow-y:scroll;">
+		{% for post in posts %}
+			{% if post.sender == user %}
+				<div class="my-message">
+					<h6 class="posession">{{ post.sender }}</h6>
+					<p>{{ post.content }}</p>
+					<small class="time">{{ post.date_created }}</small>
+				</div>
+				<br/>
+			{% else %}
+				<div class="your-message">
+					<h6 class="posession">{{ post.sender }}</h6>
+					<p>{{ post.content }}</p>
+					<small class="time">{{ post.date_created }}</small>
+				</div>
+				<br/>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<div class="center-div">
+	<h3>Post A Message</h3>
+	<br/>
+	<form action="{{ url_for('post') }}" method="POST">
+		<textarea type="text" name="input" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Your Message Goes Here"></textarea>
+		<br/>
+		<button type="submit" style="width:100%;padding-left:1.5rem;padding-right:1.5rem;" class="btn btn-outline-danger">Post</button>
+	</form>
+</div>
+
+{% endblock %}
